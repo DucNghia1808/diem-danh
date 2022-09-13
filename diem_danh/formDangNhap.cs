@@ -31,8 +31,7 @@ namespace diem_danh
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader data = cmd.ExecuteReader();
 
-
-                /*if (data.Read()) // dung data
+                if (data.Read()) // dung data
                 {
                     MessageBox.Show("Dang nhap thanh cong");
                     formMain f = new formMain();
@@ -43,7 +42,20 @@ namespace diem_danh
                 else
                 {
                     MessageBox.Show("Sai tk mk");
-                }*/
+                }
+                con.Close();
+                con.Open();
+                string sql1 = "select *from taikhoan_table where TaiKhoan = '" + username + "' and MatKhau = '" + password + "' and Quyen = '" + "admin" + "'";
+                SqlCommand cmd1 = new SqlCommand(sql1, con);
+                SqlDataReader data1 = cmd1.ExecuteReader();
+                if (data1.Read())
+                {
+                    MessageBox.Show("tai khoan admin");
+                }
+                else
+                {
+                    MessageBox.Show("tai khoan user");
+                }
             }
             catch (Exception ex)
             {
