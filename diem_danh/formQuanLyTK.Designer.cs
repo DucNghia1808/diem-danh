@@ -39,6 +39,8 @@
             this.QuanLyXoa = new System.Windows.Forms.Button();
             this.QuanLyHuy = new System.Windows.Forms.Button();
             this.dataGridViewQuanLyTK = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.QuanLyXnMK = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyTK)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +57,7 @@
             this.QuanLyMK.Name = "QuanLyMK";
             this.QuanLyMK.Size = new System.Drawing.Size(100, 20);
             this.QuanLyMK.TabIndex = 1;
+            this.QuanLyMK.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -80,7 +83,7 @@
             this.QuanLyLoaiTK.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.QuanLyLoaiTK.Location = new System.Drawing.Point(91, 88);
+            this.QuanLyLoaiTK.Location = new System.Drawing.Point(91, 111);
             this.QuanLyLoaiTK.Name = "QuanLyLoaiTK";
             this.QuanLyLoaiTK.Size = new System.Drawing.Size(100, 21);
             this.QuanLyLoaiTK.TabIndex = 4;
@@ -88,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 96);
+            this.label3.Location = new System.Drawing.Point(12, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 5;
@@ -102,6 +105,7 @@
             this.QuanLyThem.TabIndex = 6;
             this.QuanLyThem.Text = "Thêm";
             this.QuanLyThem.UseVisualStyleBackColor = true;
+            this.QuanLyThem.Click += new System.EventHandler(this.QuanLyThem_Click);
             // 
             // QuanLySua
             // 
@@ -129,6 +133,7 @@
             this.QuanLyHuy.TabIndex = 9;
             this.QuanLyHuy.Text = "Hủy";
             this.QuanLyHuy.UseVisualStyleBackColor = true;
+            this.QuanLyHuy.Click += new System.EventHandler(this.QuanLyHuy_Click);
             // 
             // dataGridViewQuanLyTK
             // 
@@ -138,11 +143,30 @@
             this.dataGridViewQuanLyTK.Size = new System.Drawing.Size(240, 210);
             this.dataGridViewQuanLyTK.TabIndex = 10;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Xác nhận MK";
+            // 
+            // QuanLyXnMK
+            // 
+            this.QuanLyXnMK.Location = new System.Drawing.Point(91, 85);
+            this.QuanLyXnMK.Name = "QuanLyXnMK";
+            this.QuanLyXnMK.Size = new System.Drawing.Size(100, 20);
+            this.QuanLyXnMK.TabIndex = 11;
+            this.QuanLyXnMK.UseSystemPasswordChar = true;
+            // 
             // formQuanLyTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 234);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.QuanLyXnMK);
             this.Controls.Add(this.dataGridViewQuanLyTK);
             this.Controls.Add(this.QuanLyHuy);
             this.Controls.Add(this.QuanLyXoa);
@@ -175,5 +199,7 @@
         private System.Windows.Forms.Button QuanLyXoa;
         private System.Windows.Forms.Button QuanLyHuy;
         private System.Windows.Forms.DataGridView dataGridViewQuanLyTK;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox QuanLyXnMK;
     }
 }

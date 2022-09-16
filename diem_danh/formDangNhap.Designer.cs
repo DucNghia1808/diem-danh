@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tkDangNhap = new System.Windows.Forms.TextBox();
             this.mkDangNhap = new System.Windows.Forms.TextBox();
             this.btDangNhap = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
+            this.text_day = new System.Windows.Forms.Label();
+            this.text_time = new System.Windows.Forms.Label();
+            this.ThoiGian = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +75,7 @@
             // 
             // btDangNhap
             // 
-            this.btDangNhap.Location = new System.Drawing.Point(36, 130);
+            this.btDangNhap.Location = new System.Drawing.Point(34, 113);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(75, 23);
             this.btDangNhap.TabIndex = 4;
@@ -81,7 +85,7 @@
             // 
             // btThoat
             // 
-            this.btThoat.Location = new System.Drawing.Point(117, 130);
+            this.btThoat.Location = new System.Drawing.Point(115, 113);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(75, 23);
             this.btThoat.TabIndex = 5;
@@ -89,11 +93,41 @@
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
+            // text_day
+            // 
+            this.text_day.AutoSize = true;
+            this.text_day.BackColor = System.Drawing.Color.Transparent;
+            this.text_day.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_day.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.text_day.Location = new System.Drawing.Point(144, 156);
+            this.text_day.Name = "text_day";
+            this.text_day.Size = new System.Drawing.Size(33, 16);
+            this.text_day.TabIndex = 71;
+            this.text_day.Text = "day";
+            // 
+            // text_time
+            // 
+            this.text_time.AutoSize = true;
+            this.text_time.BackColor = System.Drawing.Color.Transparent;
+            this.text_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_time.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.text_time.Location = new System.Drawing.Point(25, 156);
+            this.text_time.Name = "text_time";
+            this.text_time.Size = new System.Drawing.Size(36, 16);
+            this.text_time.TabIndex = 70;
+            this.text_time.Text = "time";
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.Tick += new System.EventHandler(this.ThoiGian_Tick);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(231, 185);
+            this.Controls.Add(this.text_day);
+            this.Controls.Add(this.text_time);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.btDangNhap);
             this.Controls.Add(this.mkDangNhap);
@@ -116,6 +150,9 @@
         private System.Windows.Forms.TextBox mkDangNhap;
         private System.Windows.Forms.Button btDangNhap;
         private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.Label text_day;
+        private System.Windows.Forms.Label text_time;
+        private System.Windows.Forms.Timer ThoiGian;
     }
 }
 

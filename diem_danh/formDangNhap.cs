@@ -8,32 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace diem_danh
 {
     public partial class DangNhap : Form
     {
+
         public DangNhap()
         {
             InitializeComponent();
+            ThoiGian.Start();
         }
-
+        Modify modify = new Modify();
         private void btDangNhap_Click(object sender, EventArgs e)
         {   // connect to database taikhoan_table
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-99BV9DS\SQLEXPRESS;Initial Catalog=taikhoan;Integrated Security=True");
-            try
+            string tentk = tkDangNhap.Text;
+            string matkhau = mkDangNhap.Text;
+            if (tentk.Trim() == "")
             {
-                con.Open();
-                string username = tkDangNhap.Text;
-                string password = mkDangNhap.Text;
-                string sql = "select *from taikhoan_table where TaiKhoan = '" + username + "' and MatKhau = '" + password + "'";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                SqlDataReader data = cmd.ExecuteReader();
-
-                if (data.Read()) // dung data
+                MessageBox.Show("Vui lòng nhập tên tài khoản!");
+                return;
+            }
+            else if (matkhau.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!");
+                return;
+            }
+            else
+            {
+                string query = "Select * from TaiKhoan where TaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
+                if (modify.TaiKhoans(query).Count>0) // 25'41 // check đăng nhập
                 {
-                    MessageBox.Show("Dang nhap thanh cong");
+                    MessageBox.Show("Đăng nhập thành công!");
+                    tkDangNhap.Text = "";
+                    mkDangNhap.Text = "";
+                    string sql1 = "select *from TaiKhoan where TaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "' and Quyen = '" + "admin" + "'";
+                    //modify.Command(sql1);
+                    if (modify.TaiKhoans(sql1).Count > 0) // 25'41  // check tài khoản có phải admin không
+                    {
+                        MessageBox.Show("Đăng nhập với admin!");
+                        formQuanLyTK.quyentaikhoan = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập với user!");
+                        formQuanLyTK.quyentaikhoan = false;
+                    }
                     formMain f = new formMain();
                     f.Show();
                     this.Hide();
@@ -41,26 +63,12 @@ namespace diem_danh
                 }
                 else
                 {
-                    MessageBox.Show("Sai tk mk");
-                }
-                con.Close();
-                con.Open();
-                string sql1 = "select *from taikhoan_table where TaiKhoan = '" + username + "' and MatKhau = '" + password + "' and Quyen = '" + "admin" + "'";
-                SqlCommand cmd1 = new SqlCommand(sql1, con);
-                SqlDataReader data1 = cmd1.ExecuteReader();
-                if (data1.Read())
-                {
-                    MessageBox.Show("tai khoan admin");
-                }
-                else
-                {
-                    MessageBox.Show("tai khoan user");
+                    MessageBox.Show("Đăng nhập thất bại!");
+                    tkDangNhap.Text = "";
+                    mkDangNhap.Text = "";
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi ket noi");
-            }
+
 
         }
 
@@ -79,6 +87,12 @@ namespace diem_danh
         private void DangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ThoiGian_Tick(object sender, EventArgs e)
+        {
+            text_time.Text = DateTime.Now.ToLongTimeString();
+            text_day.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }
 }

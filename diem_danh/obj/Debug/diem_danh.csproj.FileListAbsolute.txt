@@ -10,5 +10,11 @@ E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.csproj.GenerateResource.cache
 E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.csproj.CoreCompileInputs.cache
 E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.exe
 E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.pdb
-E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.formThemVanTay.resources
 E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.formQuanLyTK.resources
+E:\Do_An\diem_danh\diem_danh\bin\Debug\TaiKhoan.mdf
+E:\Do_An\diem_danh\diem_danh\bin\Debug\TaiKhoan_log.ldf
+E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.QuenMK.resources
+E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.formVanTay.resources
+E:\Do_An\diem_danh\diem_danh\bin\Debug\System.IO.Ports.dll
+E:\Do_An\diem_danh\diem_danh\bin\Debug\System.IO.Ports.xml
+E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.csproj.CopyComplete
