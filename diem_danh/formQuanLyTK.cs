@@ -44,26 +44,26 @@ namespace diem_danh
                 string xnmatkhau = QuanLyXnMK.Text;
                 if (!checkAccount(tentk))
                 {
-                    MessageBox.Show("Vui lòng nhập tên tài khoản đúng với định dạng!");
+                    MessageBox.Show("Vui lòng nhập tên tài khoản đúng với định dạng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     freeTextbox();
                     return;
                 }
                 if (!checkAccount(matkhau))
                 {
-                    MessageBox.Show("Vui lòng nhập mật khẩu đúng với định dạng!");
+                    MessageBox.Show("Vui lòng nhập mật khẩu đúng với định dạng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     freeTextbox();
                     return;
                 }
                 if (xnmatkhau != matkhau)
                 {
-                    MessageBox.Show("Vui lòng xác nhận mật khẩu chính xác!");
+                    MessageBox.Show("Vui lòng nhập lại mật khẩu chính xác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     freeTextbox();
                     return;
                 }
                 // thêm vào một số kiểm tra nếu cần
                 if (modify.TaiKhoans("Select * from TaiKhoan where TaiKhoan = '" + tentk + "'").Count != 0) // nếu tài khoản đã tồn tại
                 {
-                    MessageBox.Show("Tài khoản đã được đăng kí!");
+                    MessageBox.Show("Tài khoản đã được đăng kí!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     freeTextbox();
                     return; // 44'53
                 }
@@ -71,20 +71,44 @@ namespace diem_danh
                 {
                     string query = "Insert into TaiKhoan values ('" + tentk + "', '" + matkhau + "', '" + "user" + "')";
                     modify.Command(query);
-                    MessageBox.Show("Thêm tài khoản thành công!");
+                    MessageBox.Show("Thêm tài khoản thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     freeTextbox();
                 }
             }
             else
             {
-                MessageBox.Show("Đăng nhập với tài khoản admin để thêm tài khoản!");
+                MessageBox.Show("Vui lòng đăng nhập với admin để thêm tài khoản!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
         }
 
         private void QuanLyHuy_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void QuanLyXem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewQuanLyTK.DataSource = modify.Table("Select * from TaiKhoan");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message + "!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void formQuanLyTK_Load(object sender, EventArgs e)
+        {
+            if (quyentaikhoan == true)
+            {
+                // show data bang TaiKhoan
+                QuanLyXem.Enabled = true;
+            }
+            else
+            {
+                QuanLyXem.Enabled = false;
+            }
         }
     }
 }

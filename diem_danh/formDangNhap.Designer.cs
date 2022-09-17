@@ -38,6 +38,8 @@
             this.text_day = new System.Windows.Forms.Label();
             this.text_time = new System.Windows.Forms.Label();
             this.ThoiGian = new System.Windows.Forms.Timer(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.quenMK = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +77,7 @@
             // 
             // btDangNhap
             // 
-            this.btDangNhap.Location = new System.Drawing.Point(34, 113);
+            this.btDangNhap.Location = new System.Drawing.Point(35, 130);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(75, 23);
             this.btDangNhap.TabIndex = 4;
@@ -85,7 +87,7 @@
             // 
             // btThoat
             // 
-            this.btThoat.Location = new System.Drawing.Point(115, 113);
+            this.btThoat.Location = new System.Drawing.Point(116, 130);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(75, 23);
             this.btThoat.TabIndex = 5;
@@ -121,11 +123,35 @@
             // 
             this.ThoiGian.Tick += new System.EventHandler(this.ThoiGian_Tick);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 105);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(95, 17);
+            this.checkBox1.TabIndex = 72;
+            this.checkBox1.Text = "Hiện mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // quenMK
+            // 
+            this.quenMK.AutoSize = true;
+            this.quenMK.Location = new System.Drawing.Point(124, 105);
+            this.quenMK.Name = "quenMK";
+            this.quenMK.Size = new System.Drawing.Size(80, 13);
+            this.quenMK.TabIndex = 73;
+            this.quenMK.TabStop = true;
+            this.quenMK.Text = "Quên mật khẩu";
+            this.quenMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.quenMK_LinkClicked);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(231, 185);
+            this.Controls.Add(this.quenMK);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.text_day);
             this.Controls.Add(this.text_time);
             this.Controls.Add(this.btThoat);
@@ -135,6 +161,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangNhap";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DangNhap_FormClosed);
             this.ResumeLayout(false);
@@ -153,6 +180,8 @@
         private System.Windows.Forms.Label text_day;
         private System.Windows.Forms.Label text_time;
         private System.Windows.Forms.Timer ThoiGian;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.LinkLabel quenMK;
     }
 }
 

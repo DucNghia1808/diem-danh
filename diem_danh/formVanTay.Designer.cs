@@ -79,6 +79,7 @@
             this.QuanLyThem.TabIndex = 19;
             this.QuanLyThem.Text = "Thêm";
             this.QuanLyThem.UseVisualStyleBackColor = true;
+            this.QuanLyThem.Click += new System.EventHandler(this.QuanLyThem_Click);
             // 
             // label2
             // 
@@ -164,6 +165,7 @@
             this.Controls.Add(this.QuanLyMK);
             this.Controls.Add(this.QuanLyTK);
             this.Name = "formVanTay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formVanTay";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

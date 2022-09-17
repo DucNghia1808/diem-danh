@@ -13,6 +13,7 @@ namespace diem_danh
 {
     public partial class QuenMK : Form
     {
+        public static bool quyentaikhoan = false;
         public QuenMK()
         {
             InitializeComponent();
@@ -22,23 +23,30 @@ namespace diem_danh
         Modify modify = new Modify();
         private void LayMK_Click(object sender, EventArgs e)
         {
-            string tentk = QuenTK.Text;
-            if(tentk.Trim() == "")
+            if ( quyentaikhoan == true)
             {
-                MessageBox.Show("Vui lòng nhập đúng tài khoản đăng kí");
-                return;
-            }
-            else 
-            {
-                string query = "Select *from TaiKhoan where TaiKhoan = '"+tentk +"'";
-                if(modify.TaiKhoans(query).Count() != 0)
+                string tentk = QuenTK.Text;
+                if (tentk.Trim() == "")
                 {
-                    mkHienTai.Text = modify.TaiKhoans(query)[0].MatKhau;
+                    MessageBox.Show("Vui lòng nhập đúng tài khoản đăng kí!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản chưa được đăng kí");
+                    string query = "Select *from TaiKhoan where TaiKhoan = '" + tentk + "'";
+                    if (modify.TaiKhoans(query).Count() != 0)
+                    {
+                        mkHienTai.Text = modify.TaiKhoans(query)[0].MatKhau;
+                    }
+                    else
+                    {
+                       MessageBox.Show("Tài khoản chưa được đăng kí!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Đăng nhập với tài khoản admin để lấy lại mật khẩu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

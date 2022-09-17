@@ -32,6 +32,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lấyLạiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngSuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +41,7 @@
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vàoRaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +53,6 @@
             this.text_time = new System.Windows.Forms.Label();
             this.ThoiGian = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.vàoRaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +73,8 @@
             // 
             this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýTàiKhoảnToolStripMenuItem,
+            this.xóaTàiKhoảnToolStripMenuItem,
+            this.sửaTàiKhoảnToolStripMenuItem,
             this.lấyLạiMậtKhẩuToolStripMenuItem,
             this.đăngSuấtToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
@@ -81,8 +85,22 @@
             // 
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
             this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
+            this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Thêm tài khoản";
             this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
+            // 
+            // xóaTàiKhoảnToolStripMenuItem
+            // 
+            this.xóaTàiKhoảnToolStripMenuItem.Name = "xóaTàiKhoảnToolStripMenuItem";
+            this.xóaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xóaTàiKhoảnToolStripMenuItem.Text = "Xóa tài khoản";
+            this.xóaTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.xóaTàiKhoảnToolStripMenuItem_Click);
+            // 
+            // sửaTàiKhoảnToolStripMenuItem
+            // 
+            this.sửaTàiKhoảnToolStripMenuItem.Name = "sửaTàiKhoảnToolStripMenuItem";
+            this.sửaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sửaTàiKhoảnToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.sửaTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.sửaTàiKhoảnToolStripMenuItem_Click);
             // 
             // lấyLạiMậtKhẩuToolStripMenuItem
             // 
@@ -109,7 +127,7 @@
             // thêmThànhViênToolStripMenuItem
             // 
             this.thêmThànhViênToolStripMenuItem.Name = "thêmThànhViênToolStripMenuItem";
-            this.thêmThànhViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thêmThànhViênToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.thêmThànhViênToolStripMenuItem.Text = "Chỉnh sửa vân tay";
             this.thêmThànhViênToolStripMenuItem.Click += new System.EventHandler(this.thêmThànhViênToolStripMenuItem_Click);
             // 
@@ -126,14 +144,20 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(114, 22);
             this.toolStripMenuItem2.Text = "Giờ vào";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(114, 22);
             this.toolStripMenuItem3.Text = "Giờ ra";
+            // 
+            // vàoRaToolStripMenuItem
+            // 
+            this.vàoRaToolStripMenuItem.Name = "vàoRaToolStripMenuItem";
+            this.vàoRaToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.vàoRaToolStripMenuItem.Text = "Vào ra";
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -147,19 +171,19 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
             this.toolStripMenuItem1.Text = "Thông tin liên hệ";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(163, 22);
             this.toolStripMenuItem4.Text = "Phần mềm";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(610, 103);
+            this.label1.Location = new System.Drawing.Point(607, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 13);
             this.label1.TabIndex = 1;
@@ -170,9 +194,9 @@
             this.button10.BackColor = System.Drawing.Color.Silver;
             this.button10.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button10.Location = new System.Drawing.Point(563, 132);
+            this.button10.Location = new System.Drawing.Point(560, 282);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(91, 26);
+            this.button10.Size = new System.Drawing.Size(91, 24);
             this.button10.TabIndex = 38;
             this.button10.Text = "COM PORT";
             this.button10.UseVisualStyleBackColor = false;
@@ -180,14 +204,14 @@
             // comboPORT
             // 
             this.comboPORT.FormattingEnabled = true;
-            this.comboPORT.Location = new System.Drawing.Point(657, 134);
+            this.comboPORT.Location = new System.Drawing.Point(654, 282);
             this.comboPORT.Name = "comboPORT";
             this.comboPORT.Size = new System.Drawing.Size(121, 21);
             this.comboPORT.TabIndex = 35;
             // 
             // comPortConnect
             // 
-            this.comPortConnect.Location = new System.Drawing.Point(601, 164);
+            this.comPortConnect.Location = new System.Drawing.Point(598, 312);
             this.comPortConnect.Name = "comPortConnect";
             this.comPortConnect.Size = new System.Drawing.Size(154, 31);
             this.comPortConnect.TabIndex = 36;
@@ -201,7 +225,7 @@
             this.text_day.BackColor = System.Drawing.Color.Transparent;
             this.text_day.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_day.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.text_day.Location = new System.Drawing.Point(254, 326);
+            this.text_day.Location = new System.Drawing.Point(726, 358);
             this.text_day.Name = "text_day";
             this.text_day.Size = new System.Drawing.Size(33, 16);
             this.text_day.TabIndex = 69;
@@ -213,7 +237,7 @@
             this.text_time.BackColor = System.Drawing.Color.Transparent;
             this.text_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_time.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.text_time.Location = new System.Drawing.Point(90, 326);
+            this.text_time.Location = new System.Drawing.Point(562, 358);
             this.text_time.Name = "text_time";
             this.text_time.Size = new System.Drawing.Size(36, 16);
             this.text_time.TabIndex = 68;
@@ -222,12 +246,6 @@
             // ThoiGian
             // 
             this.ThoiGian.Tick += new System.EventHandler(this.ThoiGian_Tick);
-            // 
-            // vàoRaToolStripMenuItem
-            // 
-            this.vàoRaToolStripMenuItem.Name = "vàoRaToolStripMenuItem";
-            this.vàoRaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vàoRaToolStripMenuItem.Text = "Vào ra";
             // 
             // formMain
             // 
@@ -243,6 +261,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formMain";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formMain_FormClosed);
@@ -278,5 +297,7 @@
         private System.Windows.Forms.Timer ThoiGian;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.ToolStripMenuItem vàoRaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaTàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sửaTàiKhoảnToolStripMenuItem;
     }
 }

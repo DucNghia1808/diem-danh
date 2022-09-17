@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 namespace diem_danh
 {
     internal class Modify
@@ -14,7 +15,7 @@ namespace diem_danh
         }
         SqlCommand sqlCommand; // khoi tao cau lenh truy van
         SqlDataReader dataReader;// dung de doc data trong bang
-
+        SqlDataAdapter dataAdapter;
         public List<TaiKhoan> TaiKhoans(string query) // dung de check tai khoan
         {
             List<TaiKhoan> taiKhoans = new List<TaiKhoan>();
@@ -33,7 +34,8 @@ namespace diem_danh
             }
             return taiKhoans; // return list co chua tai khoan
         }
-        public void Command(string query) // dung de insert (dang ki tai khoan) // query command
+
+        public void Command(string query) // dung de them sua xoa) // query command
         {
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())
             {
@@ -42,6 +44,20 @@ namespace diem_danh
                 sqlCommand.ExecuteNonQuery(); // thuc thi cau truy van
                 sqlConnection.Close();
             }
+        }
+
+        /////////////////////
+        public DataTable Table(string query) // dung de show bang sql
+        {
+            DataTable dt = new DataTable();
+            using(SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlConnection);
+                dataAdapter.Fill(dt);
+                sqlConnection.Close();
+            }
+            return dt;
         }
     }
 }

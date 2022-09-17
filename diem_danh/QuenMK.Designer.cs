@@ -54,7 +54,7 @@
             // 
             // LayMK
             // 
-            this.LayMK.Location = new System.Drawing.Point(75, 164);
+            this.LayMK.Location = new System.Drawing.Point(71, 173);
             this.LayMK.Name = "LayMK";
             this.LayMK.Size = new System.Drawing.Size(75, 23);
             this.LayMK.TabIndex = 2;
@@ -66,6 +66,7 @@
             // 
             this.mkHienTai.Location = new System.Drawing.Point(167, 117);
             this.mkHienTai.Name = "mkHienTai";
+            this.mkHienTai.ReadOnly = true;
             this.mkHienTai.Size = new System.Drawing.Size(100, 20);
             this.mkHienTai.TabIndex = 3;
             // 
@@ -80,7 +81,7 @@
             // 
             // HuyLayMK
             // 
-            this.HuyLayMK.Location = new System.Drawing.Point(156, 164);
+            this.HuyLayMK.Location = new System.Drawing.Point(152, 173);
             this.HuyLayMK.Name = "HuyLayMK";
             this.HuyLayMK.Size = new System.Drawing.Size(75, 23);
             this.HuyLayMK.TabIndex = 5;
@@ -92,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 216);
+            this.ClientSize = new System.Drawing.Size(319, 287);
             this.Controls.Add(this.HuyLayMK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mkHienTai);
@@ -100,6 +101,7 @@
             this.Controls.Add(this.QuenTK);
             this.Controls.Add(this.label1);
             this.Name = "QuenMK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuenMK";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,7 +30,7 @@ namespace diem_danh
         {
             if (isExit)
             {
-                if (MessageBox.Show("Ban muon thoat chuong trinh", "Canh bao", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn thoát chương trình không", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 {
                     e.Cancel = true;
                 }
@@ -86,7 +86,7 @@ namespace diem_danh
         {
             if (comboPORT.Text == "")
             {
-                MessageBox.Show("Please, Select your COM PORT!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng kết nối cổng serial!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -96,8 +96,7 @@ namespace diem_danh
                     serialPort1.Close();
                     comboPORT.Enabled = true;
                     comPortConnect.Text = "Connect";
-                    MessageBox.Show("Your Com Port is closed.", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Cổng serial đã đóng!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -106,14 +105,26 @@ namespace diem_danh
                     comboPORT.Enabled = false;
                     serialPort1.Open();
                     comPortConnect.Text = "Disconnect";
-                    MessageBox.Show("Your Com Port is connected and ready for use.", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã kết nối!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Your Com Port is not found. Please check your Cable or COM.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể kết nối cổng serial!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void xóaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formXoaTaiKhoan f = new formXoaTaiKhoan();
+            f.Show();
+        }
+
+        private void sửaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuaMK f = new SuaMK();
+            f.Show();
         }
     }
 }

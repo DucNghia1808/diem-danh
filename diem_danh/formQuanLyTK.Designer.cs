@@ -32,11 +32,8 @@
             this.QuanLyMK = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.QuanLyLoaiTK = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.QuanLyThem = new System.Windows.Forms.Button();
-            this.QuanLySua = new System.Windows.Forms.Button();
-            this.QuanLyXoa = new System.Windows.Forms.Button();
+            this.QuanLyXem = new System.Windows.Forms.Button();
             this.QuanLyHuy = new System.Windows.Forms.Button();
             this.dataGridViewQuanLyTK = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,29 +74,9 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Mật khẩu";
             // 
-            // QuanLyLoaiTK
-            // 
-            this.QuanLyLoaiTK.FormattingEnabled = true;
-            this.QuanLyLoaiTK.Items.AddRange(new object[] {
-            "Admin",
-            "User"});
-            this.QuanLyLoaiTK.Location = new System.Drawing.Point(91, 111);
-            this.QuanLyLoaiTK.Name = "QuanLyLoaiTK";
-            this.QuanLyLoaiTK.Size = new System.Drawing.Size(100, 21);
-            this.QuanLyLoaiTK.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Loại tài khoản";
-            // 
             // QuanLyThem
             // 
-            this.QuanLyThem.Location = new System.Drawing.Point(15, 149);
+            this.QuanLyThem.Location = new System.Drawing.Point(15, 146);
             this.QuanLyThem.Name = "QuanLyThem";
             this.QuanLyThem.Size = new System.Drawing.Size(75, 23);
             this.QuanLyThem.TabIndex = 6;
@@ -107,27 +84,19 @@
             this.QuanLyThem.UseVisualStyleBackColor = true;
             this.QuanLyThem.Click += new System.EventHandler(this.QuanLyThem_Click);
             // 
-            // QuanLySua
+            // QuanLyXem
             // 
-            this.QuanLySua.Location = new System.Drawing.Point(116, 149);
-            this.QuanLySua.Name = "QuanLySua";
-            this.QuanLySua.Size = new System.Drawing.Size(75, 23);
-            this.QuanLySua.TabIndex = 7;
-            this.QuanLySua.Text = "Sửa";
-            this.QuanLySua.UseVisualStyleBackColor = true;
-            // 
-            // QuanLyXoa
-            // 
-            this.QuanLyXoa.Location = new System.Drawing.Point(15, 190);
-            this.QuanLyXoa.Name = "QuanLyXoa";
-            this.QuanLyXoa.Size = new System.Drawing.Size(75, 23);
-            this.QuanLyXoa.TabIndex = 8;
-            this.QuanLyXoa.Text = "Xóa";
-            this.QuanLyXoa.UseVisualStyleBackColor = true;
+            this.QuanLyXem.Location = new System.Drawing.Point(116, 146);
+            this.QuanLyXem.Name = "QuanLyXem";
+            this.QuanLyXem.Size = new System.Drawing.Size(75, 23);
+            this.QuanLyXem.TabIndex = 7;
+            this.QuanLyXem.Text = "Xem";
+            this.QuanLyXem.UseVisualStyleBackColor = true;
+            this.QuanLyXem.Click += new System.EventHandler(this.QuanLyXem_Click);
             // 
             // QuanLyHuy
             // 
-            this.QuanLyHuy.Location = new System.Drawing.Point(116, 190);
+            this.QuanLyHuy.Location = new System.Drawing.Point(15, 186);
             this.QuanLyHuy.Name = "QuanLyHuy";
             this.QuanLyHuy.Size = new System.Drawing.Size(75, 23);
             this.QuanLyHuy.TabIndex = 9;
@@ -169,17 +138,16 @@
             this.Controls.Add(this.QuanLyXnMK);
             this.Controls.Add(this.dataGridViewQuanLyTK);
             this.Controls.Add(this.QuanLyHuy);
-            this.Controls.Add(this.QuanLyXoa);
-            this.Controls.Add(this.QuanLySua);
+            this.Controls.Add(this.QuanLyXem);
             this.Controls.Add(this.QuanLyThem);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.QuanLyLoaiTK);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.QuanLyMK);
             this.Controls.Add(this.QuanLyTK);
             this.Name = "formQuanLyTK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formQuanLyTK";
+            this.Load += new System.EventHandler(this.formQuanLyTK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLyTK)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,11 +160,8 @@
         private System.Windows.Forms.TextBox QuanLyMK;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox QuanLyLoaiTK;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button QuanLyThem;
-        private System.Windows.Forms.Button QuanLySua;
-        private System.Windows.Forms.Button QuanLyXoa;
+        private System.Windows.Forms.Button QuanLyXem;
         private System.Windows.Forms.Button QuanLyHuy;
         private System.Windows.Forms.DataGridView dataGridViewQuanLyTK;
         private System.Windows.Forms.Label label4;

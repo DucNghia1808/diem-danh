@@ -21,5 +21,10 @@ namespace diem_danh
         {
             this.Close();
         }
+
+        private void QuanLyThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

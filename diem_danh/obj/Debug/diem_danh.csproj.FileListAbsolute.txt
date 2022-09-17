@@ -18,3 +18,5 @@ E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.formVanTay.resources
 E:\Do_An\diem_danh\diem_danh\bin\Debug\System.IO.Ports.dll
 E:\Do_An\diem_danh\diem_danh\bin\Debug\System.IO.Ports.xml
 E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.csproj.CopyComplete
+E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.formXoaTaiKhoan.resources
+E:\Do_An\diem_danh\diem_danh\obj\Debug\diem_danh.SuaMK.resources
