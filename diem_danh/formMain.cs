@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace diem_danh
 {
@@ -26,6 +28,7 @@ namespace diem_danh
 
         #endregion
         #region Event
+        Modify modify = new Modify();
         private void formMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isExit)
@@ -125,6 +128,20 @@ namespace diem_danh
         {
             SuaMK f = new SuaMK();
             f.Show();
+        }
+
+        private void timkiem_TextChanged(object sender, EventArgs e)
+        {
+            string tim = timkiem.Text.Trim();
+            if (tim == "")
+            {
+                formMain_Load(sender, e); // load form lại lên thôi
+            }
+            else // trả kết quả tìm kiếm ra grid
+            {
+                //string query = "select * from TaiKhoan where TaiKhoan like '%" + tim + "%'";
+                //dataGridViewTimKiem.DataSource = modify.Table(query);
+            }
         }
     }
 }
